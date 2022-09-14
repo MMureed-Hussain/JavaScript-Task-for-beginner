@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+  <h1> objects here</h1>
+        </title>
+    </head>
+    
+    <body>
+<p id="demo"></p>
+<p id="demo1"></p>
+<script>
+     const pson ={
+        fnname:"Tabish",
+     lnname:"Raza",
+     designation:"CEO", 
+     company:"Fluxy" ,
+      empy:"10",
+      Name: function(){
+        var fullName= this.fnname+ " " + this.lnname +" is " 
+        return fullName;
+      },
+      info : function(){
+        var fullinfo= this.designation + " of  " + this.company
+        return fullinfo
+      }
+    };
+     //method
+     document.getElementById("demo").innerHTML = pson.Name();
+     document.getElementById("demo1").innerHTML = pson.info();
+</script>
+    </body>
+</html>

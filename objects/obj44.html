@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            hotel Menu Information
+        </title>
+    </head>
+        <body>
+            <p id="demo"></p>
+            <script>
+                const person = []; 
+                //document.createElement("div");
+                //document.appendChild(person[3],"Tabish") ;
+                //document.getElementById("demo").innerHTML=person[3];
+                function outArray() 
+                {  
+                  var arraylen = newArray.length;
+                   for(var x=0; x<arraylen;x++)
+                    {
+                        newArray.toString();
+                        var outputValues = newArray[x];        
+                        var newDiv = document.createElement("div"); 
+                        //Create a new Div Tag with the createElement()Function
+                        var newContent = document.createTextNode(outputValues); 
+                        // add the value inside the Array by using the createTextNode Function
+                        newDiv.appendChild(newContent);  
+                        //Print out the newly created content 
+                        var currentDiv = document.getElementById("divOut"); 
+                        document.body.insertBefore(newDiv, currentDiv); 
+                                                                                                   
+                    }
+              
+                }
+                
+
+                </script>
+        </body>
+    </head>
+</html>

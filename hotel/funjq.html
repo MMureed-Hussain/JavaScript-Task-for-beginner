@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Hotel Menu details</title>
+        <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+    </head>
+<body>
+  <div id="service">
+  </div>
+    <script>
+      // Array Methods
+      function hotel( name, rooms){
+        this.name = name;
+        this.rooms = rooms;
+        this.reserveRoom = function(){
+            this.rooms-=1;
+        }
+        this.cancelRoom = function(){
+            this.rooms+=1;
+        }
+    };
+let roomsArray =[
+  new hotel ('vipRoom', '25'),
+  new hotel ('ExcutiveRoom', '25'),
+  new hotel ('BusinessRoom', '25')
+];
+var hotels =[
+  {
+    name: 'vipRoom',
+    rooms: 25,
+    reserveRoom: function(){
+      this.rooms -= 1;
+      console.log(this.rooms);
+      console.log(this);
+    },
+    cancelRoom: function(){
+      this.rooms += 1;
+      console.log(this.rooms);
+      console.log(this);
+    }
+  },
+  {
+    name:  'ExcutiveRoom',
+    rooms: 25,
+    reserveRoom: function(){
+      this.rooms -= 1;
+      console.log(this.rooms);
+      console.log(this);
+    },
+    cancelRoom: function(){
+      this.rooms += 1;
+      console.log(this.rooms);
+      console.log(this);
+    }
+  },
+  {
+    name: 'BusinessRoom',
+    rooms: 25,
+    reserveRoom: function(){
+      this.rooms -= 1;
+      console.log(this.rooms);
+      console.log(this);
+    },
+    cancelRoom: function(){
+      this.rooms += 1;
+      console.log(this.rooms);
+      console.log(this);
+    }
+  }
+  ];
+  // dom method us through Element Id Declara In html body
+  var parent = $("#service"); 
+ // for loop for array
+  for (let i = 0; i < roomsArray.length; i++) {
+    // dom method us for create Element div new create
+    var d = $("<div></div>");
+    // create two p element in body using dom method
+    let hotelNameP = $("<p></p>");
+    let hotelroomP = $("<p></p>");
+    let el_id = roomsArray[i].name+i;
+    hotelroomP.attr("id",el_id);
+    //hotelroomP.id="product";
+    // dom method 
+    hotelNameP.html(roomsArray[i].name);
+    hotelroomP.html(roomsArray[i].rooms);
+    // insert values in p elemen throug dom Method
+    d.append(hotelNameP);
+    d.append(hotelroomP);
+    // insert value in div how create through create element of dom method
+    parent.append(d);
+    // create buuton through create element through dom method
+    var reservation = $("<button> </button>");
+    var cancelation = $("<button> </button>");
+    // insert/create buttons
+    d.append(reservation);
+    d.append(cancelation);
+    reservation.text("reserve room");
+    cancelation.text ("cancel reservation");
+    reservation.click(() => {
+      roomsArray[i].reserveRoom();
+      update(el_id, roomsArray[i].rooms);
+    });
+    cancelation.click(() => {
+      roomsArray[i].cancelRoom()
+      update(el_id, roomsArray[i].rooms)
+    });
+  }
+function update(ind,data)
+{
+    //string
+    //$("#"+ind).html(data);
+    // Or Other Method
+ $(`#${ind}`).html(data);
+}
+</script>
+</body>
+</html>
+

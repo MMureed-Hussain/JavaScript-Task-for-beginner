@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Hotel Menu details</title>
+    </head>
+<body>
+  <div id="service">
+  </div>
+    <script>
+      // Array Methods
+var roomsArray =[
+  {
+    name: 'vipRoom',
+    rooms: 25,
+    reserveRoom: function(){
+      this.rooms -= 1;
+      console.log(this.rooms);
+      console.log(this);
+    },
+    cancelRoom: function(){
+      this.rooms += 1;
+    }
+  },
+  {
+    name:  'ExcutiveRoom',
+    rooms: 25,
+    reserveRoom: function(){
+      this.rooms -= 1; 
+    },
+    cancelRoom: function(){
+      this.rooms += 1;
+    }
+  },
+  {
+    name: 'BusinessRoom',
+    rooms: 25,
+    reserveRoom: function(){
+      this.rooms -= 1;
+      console.log(room + "okay rooom")
+    },
+    cancelRoom: function(){
+      this.rooms += 1;
+      console.log(room + "cancle rooom")
+    }
+  }
+  ];
+  // dom method us through Element Id Declara In html body
+  var parent = document.getElementById("service"); 
+ // for loop for array
+  for (let i = 0; i < roomsArray.length; i++) {
+    // dom method us for create Element div new create
+    var d = document.createElement("div");
+    // create two p element in body using dom method
+    var hotelNameP = document.createElement("p");
+    var hotelroomP = document.createElement("p");
+    // dom method 
+    hotelNameP.innerHTML =  (roomsArray[i].rooms);
+    hotelroomP.innerHTML =  (roomsArray[i].name);
+    // insert values in p elemen throug dom Method
+    d.appendChild(hotelNameP);
+    d.appendChild(hotelroomP);
+    // insert value in div how create through create element of dom method
+    parent.appendChild(d);
+    // create buuton through create element through dom method
+    var reservation = document.createElement("button");
+    var cancelation = document.createElement("button");
+    // insert/create buttons
+    d.appendChild(reservation);
+    d.appendChild(cancelation);
+
+    reservation.innerText = 'reserve room';
+    cancelation.innerText = "cancel reservation";
+       
+    reservation.addEventListener('click', () => roomsArray[i].reserveRoom());
+    cancelation.addEventListener('click', () => roomsArray[i].cancelRoom());
+    //document.querySelectorAll("button")[i].addEventListener("click", add());
+  }
+  /*function add()
+  {
+  for(let i=0; i<=rooms.length; i++) {
+{alert("clicked " + (i+1))}
+}
+  }*/
+</script>
+</body>
+</html>
+

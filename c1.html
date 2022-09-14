@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>
+            <h1>calculator</h1>
+        </title>
+        <body>
+            <!-- <form name="calculator"> -->
+                <table>
+                   <tr>
+                      <td colspan="4">
+                         <input type="text" name="display" id="dplay" placeholder="Enter Value..." >
+                      </td>
+                   </tr>
+                   <tr>
+                      <td><input type="button" name="one" value="1" onclick="dplay.value += '1'"></td>
+                      <td><input type="button" name="two" value="2" onclick="dplay.value += '2'"></td>
+                      <td><input type="button" name="three" value="3" onclick="dplay.value += '3'"></td>
+                      <td><input type="button" class="operator" name="plus" value="+" onclick="dplay.value += '+'"></td>
+                   </tr>
+                   <tr>
+                    <td><input type="button" name="four" value="4" onclick="dplay.value +='4'" ></td>
+                    <td><input type="button" name="five" value="5" onclick="dplay.value += '5'"></td>
+                    <td> <input type="button" name="six" value="6" onclick="dplay.value +='6'"></td>
+                    <td><input type="button" name="mins" class="operator" value="-" onclick="dplay.value +='-'"</td>
+                   </tr>
+                   <tr>
+                    <td><input type="button" name="seven" value="7" onclick="dplay.value +='7'"> </td>
+                    <td><input type="button" name="eight" value="8" onclick="dplay.value += '8'"></td>
+                    <td><input type="button" name="nine" value="9" onclick="dplay.value +='9'"></td>
+                    <td><input type="button" name="mul" class="operator" value="*" onclick="dplay.value +='*'"></td>
+                   </tr>
+                   <tr>
+                    <td><input type="button" id="clear" value="c" onclick="dplay.value =''"</td>
+                    <td><input type="button" name="zero" value="0" onclick="dplay.value +='0'"</td>
+                    <td><input type="button" id="doit" value="=" onclick="dplay.value =eval(dplay.value)"</td>
+                    <td><input type="button" name="divid" class="opertor" value="/" onclick="dplay.value +='/'"</td>
+                   </tr>
+                   </table>
+            <!-- </form> -->
+        </body>
+    </head>
+</html>
